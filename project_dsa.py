@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from statistics import stdev
 
 file = r"C:/Users/pujit/Downloads/test.txt" #file location
-x,x_err,y,y_err= np.loadtxt(file, unpack=True, usecols=[0,1,2,3])
+x,x_err,y,y_err= np.loadtxt(file, unpack=True, skiprows = 1, usecols=[0,1,2,3])
 n = len(x)
 spearman_coeff,p_value = stats.spearmanr(x,y)
 student_t,p_value = stats.ttest_ind(x,y)
